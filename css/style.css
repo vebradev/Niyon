@@ -169,7 +169,7 @@ nav .cta {
 header {
   display: flex;
   flex-direction: column-reverse;
-  padding: 20px;
+  padding: 20px 20px 40px 20px;
   background-color: #6927ff;
 }
 header .copy {
@@ -190,23 +190,43 @@ header .copy .cta {
   border-radius: 4px;
 }
 header .visual img {
-  width: 100%;
+  width: 90%;
+  display: block;
+  margin: 0 auto;
 }
 .content {
   background: #ffd527;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 40px 20px 20px 20px;
 }
-.content .visual img {
-  width: 100%;
+.content .card {
+  border-bottom: 1px dotted #c29c00;
+  margin: 0 0 20px;
+  padding: 0 0 20px;
 }
-.content .copy h2 {
+.content .card:last-child {
+  border-bottom: none;
+  padding: 0;
+  margin: 0;
+}
+.content .card .head {
+  display: flex;
+  align-items: center;
+}
+.content .card .head img {
+  max-width: 100px;
+  margin: 0 10px 0 0;
+}
+.content .card .copy {
+  margin: 10px 0 0 0;
+}
+.content .card .copy h2 {
   margin: 0 0 20px 0;
   line-height: 1.8rem;
   font-weight: 700;
 }
-.content .cta {
+.content .card .cta {
   display: block;
   background-color: #ffffff;
   padding: 20px;
@@ -215,7 +235,7 @@ header .visual img {
   border-radius: 4px;
 }
 footer {
-  background-color: #C29C00;
+  background-color: #c29c00;
   color: #ffffff;
   text-align: center;
   font-size: 0.8rem;

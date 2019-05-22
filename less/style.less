@@ -66,10 +66,10 @@ nav {
   .menu {
     display: none;
     position: absolute;
+    align-items: center;
     top: 50px;
     left: 0;
     width: 90%;
-    height: 400px;
     background: @primaryDark;
     padding: 20px;
 
@@ -81,10 +81,25 @@ nav {
       background: @primary;
       padding: 0;
       width: inherit;
+      height: 100%;
+    }
+
+    .login {
+      background: #ffd527;
+      border-radius: 4px;
+      display: block;
+      border: 0;
+      margin: 20px 0 0 0;
+      color: #000;
     }
 
     li {
       text-align: center;
+      border-bottom: 1px solid #837dff80;
+
+      @media @tabletSmall {
+        border-bottom: 0;
+      }
 
       a {
         display: inline-block;
@@ -104,6 +119,10 @@ nav {
     }
   }
 
+  .open {
+    display: block;
+  }
+
   .menu-burger {
     &:hover {
       cursor: pointer;
@@ -115,14 +134,6 @@ nav {
     .burger {
       width: 20px;
       height: 20px;
-    }
-    input {
-      width: 25px;
-      height: 25px;
-      position: absolute;
-      right: 15px;
-      top: 10px;
-      -webkit-touch-callout: none;
     }
   }
 

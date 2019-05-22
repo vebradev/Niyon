@@ -239,10 +239,10 @@ nav .logo {
 nav .menu {
   display: none;
   position: absolute;
+  align-items: center;
   top: 50px;
   left: 0;
   width: 90%;
-  height: 400px;
   background: #150047;
   padding: 20px;
 }
@@ -255,10 +255,25 @@ nav .menu {
     background: #6927FF;
     padding: 0;
     width: inherit;
+    height: 100%;
   }
+}
+nav .menu .login {
+  background: #ffd527;
+  border-radius: 4px;
+  display: block;
+  border: 0;
+  margin: 20px 0 0 0;
+  color: #000;
 }
 nav .menu li {
   text-align: center;
+  border-bottom: 1px solid #837dff80;
+}
+@media (min-width: 500px) {
+  nav .menu li {
+    border-bottom: 0;
+  }
 }
 nav .menu li a {
   display: inline-block;
@@ -276,6 +291,9 @@ nav .menu li a {
     padding: 10px 20px;
   }
 }
+nav .open {
+  display: block;
+}
 nav .menu-burger:hover {
   cursor: pointer;
 }
@@ -287,14 +305,6 @@ nav .menu-burger:hover {
 nav .menu-burger .burger {
   width: 20px;
   height: 20px;
-}
-nav .menu-burger input {
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  right: 15px;
-  top: 10px;
-  -webkit-touch-callout: none;
 }
 nav .cta {
   color: inherit;

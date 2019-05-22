@@ -2,7 +2,7 @@
   background: @primary;
   position: fixed;
   width: 100%;
-  border-bottom: 1px solid #541bd7;
+  border-bottom: 1px solid @primaryLightDark;
 
   @media @desktop {
     margin: 0 auto;
@@ -17,8 +17,8 @@
 }
 
 nav {
-  background: #6927ff;
-  color: #ffffff;
+  background: @primary;
+  color: @white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -58,9 +58,9 @@ nav {
 
     .login {
       display: block;
-      background: #ffd527;
+      background: @secondary;
       border: 0;
-      color: #000;
+      color: @black;
       margin: 0;
 
       @media @tabletSmall {
@@ -68,14 +68,14 @@ nav {
         margin: 0 0 0 10px;
 
         &:hover {
-          background: #f3c400;
+          background: @secondaryLightDark;
         }
       }
     }
 
     li {
       text-align: center;
-      border-bottom: 1px solid #837dff80;
+      border-bottom: 1px solid @primaryHover;
 
       @media @tabletSmall {
         border-bottom: 0;
@@ -92,7 +92,7 @@ nav {
         width: 100%;
 
         &:hover {
-          background: #837dff80;
+          background: @primaryHover;
         }
 
         @media @tabletSmall {
@@ -128,7 +128,7 @@ nav {
 
 .open {
   nav& {
-    background: #150047;
+    background: @primaryDark;
   }
   .menu {
     display: block;
@@ -137,6 +137,6 @@ nav {
     cursor: pointer;
   }
   .login:hover {
-    background: #f3c400;
+    background: @secondaryLightDark;
   }
 }

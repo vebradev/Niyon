@@ -144,6 +144,8 @@ h1 {
   font-size: 2.1rem;
   margin: 0 0 1rem 0;
   text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  word-spacing: 0.4rem;
 }
 h2 {
   font-size: 1.8rem;
@@ -182,7 +184,7 @@ header {
   }
 }
 header .copy {
-  color: #ffffff;
+  color: #FFFFFF;
   text-align: left;
 }
 @media (min-width: 800px) {
@@ -191,6 +193,7 @@ header .copy {
   }
 }
 header .copy h1 {
+  font-size: 1.9rem;
   line-height: 2.1rem;
 }
 header .copy .header_cta {
@@ -210,7 +213,7 @@ header .copy .header_cta input {
 header .copy .header_cta .cta {
   width: 45%;
   display: block;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   text-decoration: none;
   text-align: center;
   border-top-right-radius: 4px;
@@ -252,7 +255,7 @@ header .visual img {
   background: #6927FF;
   position: fixed;
   width: 100%;
-  border-bottom: 1px solid #541bd7;
+  border-bottom: 1px solid #541BD7;
 }
 @media (min-width: 1200px) {
   .navigation {
@@ -266,8 +269,8 @@ header .visual img {
   }
 }
 nav {
-  background: #6927ff;
-  color: #ffffff;
+  background: #6927FF;
+  color: #FFFFFF;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -308,9 +311,9 @@ nav .menu {
 }
 nav .menu .login {
   display: block;
-  background: #ffd527;
+  background: #FFD527;
   border: 0;
-  color: #000;
+  color: #000000;
   margin: 0;
 }
 @media (min-width: 600px) {
@@ -319,7 +322,7 @@ nav .menu .login {
     margin: 0 0 0 10px;
   }
   nav .menu .login:hover {
-    background: #f3c400;
+    background: #F3C400;
   }
 }
 nav .menu li {
@@ -379,10 +382,10 @@ nav.open {
   cursor: pointer;
 }
 .open .login:hover {
-  background: #f3c400;
+  background: #F3C400;
 }
 .content {
-  background: #ffd527;
+  background: #FFD527;
   display: flex;
   flex-direction: column;
   padding: 40px 20px 20px 20px;
@@ -422,9 +425,9 @@ nav.open {
   align-items: center;
   margin: 0 0 20px;
   padding: 10px;
-  background: #ffd00e;
+  background: #F3C400;
   border-radius: 4px;
-  border: 1px solid #c29c0080;
+  border: 1px solid #C29C0080;
 }
 @media (min-width: 800px) {
   .content .card {
@@ -466,7 +469,7 @@ nav.open {
 }
 .content .card .cta {
   display: block;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   padding: 20px;
   text-decoration: none;
   text-align: center;
@@ -479,7 +482,7 @@ nav.open {
   }
 }
 footer {
-  background-color: #c29c00;
+  background-color: #C29C00;
   color: #FFD527;
   text-align: center;
   font-size: 0.8rem;

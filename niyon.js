@@ -1,3 +1,4 @@
+// Hi!
 console.log("👋");
 
 // Burger menu
@@ -6,49 +7,96 @@ menuBurger.addEventListener("click", () => {
   document.querySelector("nav").classList.toggle("open");
 });
 
-// Feedback creation
+// Quotes
 
 const feedbacks = [
   {
+    id: "1",
     name: "Jon Wayne",
     occupation: "Physicist",
-    image: "https://randomuser.me/api/portraits/men/82.jpg",
-    quote: "Lorem ipsum generatus mer bits un. Speron kaqun hin hadun."
+    image: "https://api.adorable.io/avatars/80/a.png",
+    quote: "1. Lorem ipsum generatus mer bits un. Speron kaqun hin hadun."
   },
   {
+    id: "2",
     name: "Arya Robertson",
     occupation: "Archer",
-    image: "https://randomuser.me/api/portraits/women/26.jpg",
-    quote: "Moterinsun qvato respin dube. Shamar lekas bazar judmanti ividu!"
+    image: "https://api.adorable.io/avatars/80/b.png",
+    quote: "2. Moterinsun qvato respin dube. Shamar lekas bazar judmanti ividu!"
   },
   {
+    id: "3",
     name: "Kin Soul",
     occupation: "Archer",
-    image: "https://randomuser.me/api/portraits/men/49.jpg",
-    quote: "Lorem ipsum generatus mer bits un. Speron kaqun hin hadun.!"
+    image: "https://api.adorable.io/avatars/80/c.png",
+    quote: "3. Lorem ipsum generatus mer bits un. Speron kaqun hin hadun.!"
+  },
+  {
+    id: "4",
+    name: "Lofi Tunnie",
+    occupation: "Producer",
+    image: "https://api.adorable.io/avatars/80/o.png",
+    quote: "4. Lorem ipsum generatus mer bits un. Speron kaqun hin hadun.!"
+  },
+  {
+    id: "5",
+    name: "Lofi Tunnie",
+    occupation: "Producer",
+    image: "https://api.adorable.io/avatars/80/z.png",
+    quote: "5. Lorem ipsum generatus mer bits un. Speron kaqun hin hadun.!"
   }
 ];
 
-class Feedback {
+class Avatar {
+  constructor(avatar) {
+    this.avatar = avatar;
+    this.avatarData = avatar.dataset.avatar;
+    this.quotes = document.querySelectorAll(
+      `.quote[data-avatar="${this.avatarData}"]`
+    );
+    this.quotes = Array.from(this.quotes).map(quote => new Quote(quote));
+    this.avatar.addEventListener("click", () => this.showQuote());
+    // console.log(avatar);
+    this.avatar.style.backgroundImage = `url("${feedbacks[3].image}")`;
+  }
+  showQuote() {
+    const avatars = document.querySelectorAll(".avatar");
+    avatars.forEach(avatar => {
+      avatar.classList.remove("active-avatar");
+    });
+    const quotes = document.querySelectorAll(".quote");
+    quotes.forEach(quote => {
+      quote.style.display = "none";
+    });
+    this.avatar.classList.add("active-avatar");
+    this.quotes.forEach(quote => quote.viewQuote());
+  }
+}
+
+class Quote {
+  constructor(quoteElement) {
+    this.quoteElement = quoteElement;
+  }
+  viewQuote() {
+    this.quoteElement.style.display = "block";
+  }
+}
+
+class Drawer {
   constructor(feedback) {
     this.feedback = feedback;
     this.name = feedback.name;
     this.occupation = feedback.occupation;
+    this.image = feedback.image;
     this.quote = feedback.quote;
-    this.profile();
-  }
-
-  profile() {
-    const profile = document.createElement("span");
-    profile.textContent = `Head of ${this.name}`;
-    quotesBody.appendChild(profile);
-    console.log("draw the head");
-    console.log(profile);
+    console.log(this.name);
+    console.log(this.image);
   }
 }
 
-feedbacks.forEach(feedback => console.log(feedback));
-
-feedbacks.forEach(feedback => {
-  new Feedback(feedback);
+const avatars = document.querySelectorAll(".avatar");
+avatars.forEach(avatar => {
+  new Avatar(avatar);
 });
+
+feedbacks.forEach(feedback => new Drawer(feedback));

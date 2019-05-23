@@ -1,0 +1,82 @@
+.avatars {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0 1rem 0;
+
+  @media @tabletSmall {
+      justify-content: space-around;
+  }
+
+  @media @tabletMedium {
+      width: 70%;
+      margin: 0 auto;
+  }
+
+  .avatar {
+    opacity: 0.5;
+    display: block;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0;
+    border-radius: 5.5rem;
+    border: 4px solid @secondaryDark;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @media @tabletLarge {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+      border: 4px solid @white;
+    }
+  }
+  .active-avatar {
+    opacity: 1;
+    border: 4px solid @white;
+  }
+}
+
+.quote {
+  font-size: 1rem;
+  padding: 2rem 0 0 0;
+  display: none;
+
+  .text {
+    position: relative;
+    padding: 0;
+    font-weight: bold;
+    font-style: italic;
+
+    &::before,
+    &::after {
+      position: absolute;
+      font-size: 5rem;
+      color: @secondaryDark;
+      opacity: 0.5;
+    }
+    &::before {
+      content: "“";
+    }
+
+    &::after {
+      content: "”";
+      bottom: -2.5rem;
+    }
+  }
+
+  .name, .occupation {
+    font-size: 1rem;
+  }
+
+  .name {
+    font-weight: bold;
+  }
+
+  span {
+    display: block;
+  }
+}

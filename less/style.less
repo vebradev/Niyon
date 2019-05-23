@@ -5,44 +5,11 @@
 @import "header.less";
 @import "navigation.less";
 @import "content.less";
+@import "quotes.less";
 
 .container {
   @media @desktop {
     max-width: 1200px;
     margin: 0 auto;
-  }
-}
-
-footer {
-  background-color: @secondaryDark;
-  color: @secondary;
-  text-align: center;
-  font-size: 0.8rem;
-  padding: 20px;
-}
-
-.avatars {
-  display: flex;
-  justify-content: center;
-
-  .avatar {
-    opacity: 0.6;
-    display: block;
-    width: 8rem;
-    height: 8rem;
-    margin: 0 0.5rem 2rem 0.5rem;
-    border-radius: 5.5rem;
-    border: 5px solid @white;
-  }
-  .active-avatar {
-    opacity: 1;
-  }
-}
-
-.quote {
-  font-size: 1rem;
-  display: none;
-  span {
-    display: block;
   }
 }

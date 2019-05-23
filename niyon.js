@@ -11,64 +11,51 @@ menuBurger.addEventListener("click", () => {
 
 const feedbacks = [
   {
+    id: "0",
+    image: "https://api.adorable.io/avatars/120/a.png"
+  },
+  {
     id: "1",
-    name: "Jon Wayne",
-    occupation: "Physicist",
-    image: "https://api.adorable.io/avatars/80/a.png",
-    quote: "1. Lorem ipsum generatus mer bits un. Speron kaqun hin hadun."
+    image: "https://api.adorable.io/avatars/120/b.png"
   },
   {
     id: "2",
-    name: "Arya Robertson",
-    occupation: "Archer",
-    image: "https://api.adorable.io/avatars/80/b.png",
-    quote: "2. Moterinsun qvato respin dube. Shamar lekas bazar judmanti ividu!"
+    image: "https://api.adorable.io/avatars/120/c.png"
   },
   {
     id: "3",
-    name: "Kin Soul",
-    occupation: "Archer",
-    image: "https://api.adorable.io/avatars/80/c.png",
-    quote: "3. Lorem ipsum generatus mer bits un. Speron kaqun hin hadun.!"
+    image: "https://api.adorable.io/avatars/120/o.png"
   },
   {
     id: "4",
-    name: "Lofi Tunnie",
-    occupation: "Producer",
-    image: "https://api.adorable.io/avatars/80/o.png",
-    quote: "4. Lorem ipsum generatus mer bits un. Speron kaqun hin hadun.!"
-  },
-  {
-    id: "5",
-    name: "Lofi Tunnie",
-    occupation: "Producer",
-    image: "https://api.adorable.io/avatars/80/z.png",
-    quote: "5. Lorem ipsum generatus mer bits un. Speron kaqun hin hadun.!"
+    image: "https://api.adorable.io/avatars/120/z.png"  
   }
 ];
 
 class Avatar {
-  constructor(avatar) {
-    this.avatar = avatar;
-    this.avatarData = avatar.dataset.avatar;
+  constructor(element) {
+    this.element = element;
+    this.elementId = element.dataset.avatar;
+    this.image = feedbacks[this.elementId - 1].image;
+    this.element.style.backgroundImage = `url("${this.image}")`;
+    this.elements = document.querySelectorAll(".avatar");
     this.quotes = document.querySelectorAll(
-      `.quote[data-avatar="${this.avatarData}"]`
+      `.quote[data-avatar="${this.elementId}"]`
     );
     this.quotes = Array.from(this.quotes).map(quote => new Quote(quote));
-    this.avatar.addEventListener("click", () => this.showQuote());
-    // console.log(avatar);
-    this.avatar.style.backgroundImage = `url("${feedbacks[3].image}")`;
+    this.element.addEventListener("click", () => this.showQuote());
   }
+
   showQuote() {
-    const avatars = document.querySelectorAll(".avatar");
-    avatars.forEach(avatar => {
-      avatar.classList.remove("active-avatar");
+    const elements = document.querySelectorAll(".avatar");
+    elements.forEach(element => {
+      element.classList.remove("active-avatar");
     });
     const quotes = document.querySelectorAll(".quote");
     quotes.forEach(quote => {
       quote.style.display = "none";
     });
-    this.avatar.classList.add("active-avatar");
+    this.element.classList.add("active-avatar");
     this.quotes.forEach(quote => quote.viewQuote());
   }
 }
@@ -82,21 +69,7 @@ class Quote {
   }
 }
 
-class Drawer {
-  constructor(feedback) {
-    this.feedback = feedback;
-    this.name = feedback.name;
-    this.occupation = feedback.occupation;
-    this.image = feedback.image;
-    this.quote = feedback.quote;
-    console.log(this.name);
-    console.log(this.image);
-  }
-}
-
 const avatars = document.querySelectorAll(".avatar");
 avatars.forEach(avatar => {
   new Avatar(avatar);
 });
-
-feedbacks.forEach(feedback => new Drawer(feedback));

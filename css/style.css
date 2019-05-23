@@ -445,7 +445,6 @@ nav.open {
 .content .card .head {
   display: flex;
   align-items: center;
-  padding: 10px;
 }
 @media (min-width: 600px) {
   .content .card .head {
@@ -475,12 +474,6 @@ nav.open {
   text-align: center;
   border-radius: 4px;
 }
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-}
 footer {
   background-color: #C29C00;
   color: #FFD527;
@@ -490,24 +483,84 @@ footer {
 }
 .avatars {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  margin: 2rem 0 1rem 0;
+}
+@media (min-width: 600px) {
+  .avatars {
+    justify-content: space-around;
+  }
+}
+@media (min-width: 700px) {
+  .avatars {
+    width: 70%;
+    margin: 0 auto;
+  }
 }
 .avatars .avatar {
-  opacity: 0.6;
+  opacity: 0.5;
   display: block;
-  width: 8rem;
-  height: 8rem;
-  margin: 0 0.5rem 2rem 0.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 0;
   border-radius: 5.5rem;
-  border: 5px solid #FFFFFF;
+  border: 4px solid #C29C00;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+@media (min-width: 800px) {
+  .avatars .avatar {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+.avatars .avatar:hover {
+  cursor: pointer;
+  border: 4px solid #FFFFFF;
 }
 .avatars .active-avatar {
   opacity: 1;
+  border: 4px solid #FFFFFF;
 }
 .quote {
   font-size: 1rem;
+  padding: 2rem 0 0 0;
   display: none;
+}
+.quote .text {
+  position: relative;
+  padding: 0;
+  font-weight: bold;
+  font-style: italic;
+}
+.quote .text::before,
+.quote .text::after {
+  position: absolute;
+  font-size: 5rem;
+  color: #C29C00;
+  opacity: 0.5;
+}
+.quote .text::before {
+  content: "“";
+}
+.quote .text::after {
+  content: "”";
+  bottom: -2.5rem;
+}
+.quote .name,
+.quote .occupation {
+  font-size: 1rem;
+}
+.quote .name {
+  font-weight: bold;
 }
 .quote span {
   display: block;
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 }
